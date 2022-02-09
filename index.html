@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>MongoDB User Management</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="add-user">
+            <h3>Add User</h3>
+            <form action="/newUser" method="POST" class="form">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" placeholder="First Name">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" placeholder="Last Name">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" placeholder="Email">
+                <label for="age">Age</label>
+                <input type="number" name="age" min="1" max="99">
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+        <div class="edit-user">
+            <h3>Edit User</h3>
+            <form action="/updateUser" method="POST" class="form">
+                <label for="firstName">First Name of User</label>
+                <input type="text" name="firstName" placeholder="First Name of User">
+                <label for="lastName">Last Name of User</label>
+                <input type="text" name="lastName" placeholder="Last Name of User">
+                <label for="">Select a Field to Edit</label>
+                <select name="editField">
+                    <option value="firstName">First Name</option>
+                    <option value="lastName">Last Name</option>
+                    <option value="email">Email</option>
+                    <option value="age">Age</option>
+                </select>
+                <label for="updateForField">Enter the Update to Selected Field</label>
+                <input type="text" name="updateForField" placeholder="Enter Update Here">
+                <button type="submit">Submit Update</button>
+            </form>
+        </div>
+        <div class="delete-user">
+            <h3>Delete User</h3>
+            <form action="/deleteUser" method="POST" class="small-form form">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" placeholder="First Name">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" placeholder="Last Name">
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+        <div class="find-user">
+            <h3>Find User</h3>
+            <form action="/searchUser" method="POST" class="small-form form">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" placeholder="First Name">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" placeholder="Last Name">
+                <button type="submit">Search User</button>
+            </form>
+        </div>
+        <div class="get-users form">
+            <h3>See All Users</h3>
+            <a href="/getUsers">See Users</a>
+            <a href="/sortLastNameAZ">Sort by Last Name A - Z</a>
+            <a href="/sortLastNameZA">Sort by Last Name Z - A</a>
+            <a href="/sortFirstNameAZ">Sort by First Name A - Z</a>
+            <a href="/sortFirstNameZA">Sort by First Name Z - A</a>
+        </div>
+    </div>
+</body>
+
+</html>
